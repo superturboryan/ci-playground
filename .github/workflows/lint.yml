@@ -68,6 +68,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install emoji  
 
-      - name: 💜 Check all commit messages for emojis
+      - name: Check all commit messages for emojis
         if: env.should_skip == 'false'
         run: python python_scripts/check_all_commits_for_emojis.py
+
+      - name: Check all commits are signed
+        if: env.should_skip == 'false'
+        run: python python_scripts/check_all_commits_are_signed.py
